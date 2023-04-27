@@ -11,7 +11,6 @@ export const Background = styled.div`
     background-color: skyblue;
 
     & > img {
-        /* espaçar essa imagem ? */
         width: 100vw;
         height: 100vh;
 
@@ -173,7 +172,3 @@ export const LoginWithDiv = styled.div`
         }
     }
 `;
-
-// export const Icon = styled.img`
-//     width: 3vw;
-// `;

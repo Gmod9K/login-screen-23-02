@@ -31,7 +31,7 @@ type SignInForm = {
     password: string;
     rememberme: boolean;
 }
-// ver aquele shape
+
 const schema = yup.object().shape({
     username: yup.string().required("Campo obrigatório"),
     password: yup.string().required("Campo obrigatório"),
@@ -59,8 +59,6 @@ export const SignIn = () => {
         <Background>
             <img src={login} alt="LoginImage" width="400px"/>
             <Container>
-
-                {/* Criar HEader */}
 
                 <Image>
                     <img src={login} alt="LoginImage" width="400px"/>
@@ -103,7 +101,7 @@ export const SignIn = () => {
                             <label>Não tem uma conta?</label>
                             <NavLink to='/register'>Inscreva-se</NavLink>
                         </RegisterDiv>
-                            {/* <NavLink /> */}
+
                         <LoginWithDiv>
                             <h2>Logar Com</h2>
                             <div>

@@ -11,7 +11,6 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 
 export const InputBase: ForwardRefRenderFunction<HTMLInputElement, InputProps> = ({ name, label, placeholder, error, ...rest }: InputProps, ref) => {
     return(
-        // Testar operador trinario: placeholder={error ? error.message: placeholder}
         <>
             <Label htmlFor={name}>{label}</Label>
             <InputStyles

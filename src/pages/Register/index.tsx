@@ -7,9 +7,6 @@ import * as yup from 'yup';
 import { Input } from '../../components/Input';
 
 import login from '../../assets/login.svg';
-// import facebook from '../../assets/facebook.png'
-// import google from '../../assets/google.png'
-// import apple from '../../assets/apple.png';
 
 import {
     Background,
@@ -100,8 +97,6 @@ export const Register = () => {
                             error={errors.passwordConfirm}
                             {...register('passwordConfirm')}
                         />
-
-                        {/* CoisaNavigation */}
 
                         <Button type="submit" value="Cadastrar-se">Cadastrar-se</Button>
                     </Form>
