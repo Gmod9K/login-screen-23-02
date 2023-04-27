@@ -4,16 +4,24 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 
-import { Input } from '../../components/input';
+import { Input } from '../../components/Input';
 
 import login from '../../assets/login.svg';
-import facebook from '../../assets/facebook.png'
-import google from '../../assets/google.png'
-import apple from '../../assets/apple.png';
+// import facebook from '../../assets/facebook.png'
+// import google from '../../assets/google.png'
+// import apple from '../../assets/apple.png';
 
-import { Background, Button, Container, Content, Form, Image, Title } from './Styles';
+import {
+    Background,
+    Button,
+    Container,
+    Content,
+    Form,
+    Image,
+    Title
+} from './Styles';
 
-type SignOut = {
+type RegisterForm = {
     fullName: string;
     username: string;
     mail: string;
@@ -22,19 +30,24 @@ type SignOut = {
 }
 
 const schema = yup.object({
-    fullName: yup.string().required(),
-    username: yup.string().required(),
-    mail: yup.string().required(),
-    password: yup.string().required(),
-    passwordConfirm: yup.string().required().oneOf([yup.ref('password')])
+    fullName: yup.string().required("Campo obrigatório"),
+    username: yup.string().required("Campo obrigatório"),
+    mail: yup.string().required("Campo obrigatório"),
+    password: yup.string().required("Campo obrigatório"),
+    passwordConfirm: yup
+        .string()
+        .required("Campo obrigatório")
+        .oneOf([yup.ref('password')],
+        "As senhas devem ser iguais"
+        )
 })
 
 export const Register = () => {
-    const { register, handleSubmit, formState: {errors} } = useForm<SignOut>({
+    const { register, handleSubmit, formState: {errors} } = useForm<RegisterForm>({
         resolver: yupResolver(schema)
     });
 
-    const handleSignOut = (data: SignOut) => {
+    const handleRegister = (data: RegisterForm) => {
         setTimeout(() => {
             console.log(data);
         }, 0);
@@ -48,10 +61,10 @@ export const Register = () => {
                 </Image>
 
                 <Content>
-                    <Form onSubmit={handleSubmit(handleSignOut)}>
-                        <Title>CADASTRO</Title>
+                    <Form onSubmit={handleSubmit(handleRegister)}>
+                        <Title>Cadastro</Title>
 
-                        <Input 
+                        <Input
                             label='Nome completo'
                             placeholder='Seu Nome'
                             error={errors.fullName}
@@ -62,42 +75,37 @@ export const Register = () => {
                             label='Nome de usuário'
                             placeholder='Nome de Usuário'
                             error={errors.username}
-                            {...register('username')} 
+                            {...register('username')}
                         />
 
-                        <Input 
-                            label='E-mail' 
+                        <Input
+                            label='E-mail'
                             placeholder='E-mail'
-                            error={errors.mail} 
+                            error={errors.mail}
                             {...register('mail')}
                         />
 
-                        <Input 
+                        <Input
                             type='password'
-                            label='Senha' 
+                            label='Senha'
                             placeholder='Sua Senha'
-                            error={errors.password} 
+                            error={errors.password}
                             {...register('password')}
                         />
 
-                        <Input 
+                        <Input
                             type='password'
-                            label='Confirmar senha' 
+                            label='Confirmar senha'
                             placeholder='Confirmar Senha'
-                            error={errors.passwordConfirm} 
+                            error={errors.passwordConfirm}
                             {...register('passwordConfirm')}
                         />
 
-                        <Button type="submit" value="Cadastrar-se" />
+                        {/* CoisaNavigation */}
+
+                        <Button type="submit" value="Cadastrar-se">Cadastrar-se</Button>
                     </Form>
                 </Content>
-                {/* Register
-                Nome
-                Nome de usuario
-                E-mail
-                Senha
-                Confirmação de senha
-                OneOf */}
             </Container>
         </Background>
     )

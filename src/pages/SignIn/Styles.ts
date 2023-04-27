@@ -11,6 +11,7 @@ export const Background = styled.div`
     background-color: skyblue;
 
     & > img {
+        /* espaçar essa imagem ? */
         width: 100vw;
         height: 100vh;
 
@@ -62,9 +63,21 @@ export const Content = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    overflow: auto;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
 `;
 
 export const Form = styled.form`
+    height: 80%;
+
     display: flex;
     flex-direction: column;
 
@@ -73,9 +86,10 @@ export const Form = styled.form`
 
 export const Title = styled.h1`
     text-align: center;
-    font-weight: 500;
+    text-transform: uppercase;
 
     font-size: 36px;
+    font-weight: 500;
 
     padding-bottom: 6px;
 `;
@@ -84,7 +98,7 @@ export const LoginMisc = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
     padding-top: 4px;
 
     & > div {
@@ -100,10 +114,6 @@ export const LoginMisc = styled.div`
             text-decoration: underline;
         }
     }
-`;
-
-export const Label = styled.label`
-    margin-bottom: 8px;
 `;
 
 export const Button = styled.button`
@@ -152,6 +162,8 @@ export const LoginWithDiv = styled.div`
         display: flex;
         justify-content: space-evenly;
 
+        margin-bottom: 28px;
+
         & > a > img {
             display: flex;
 
@@ -161,3 +173,7 @@ export const LoginWithDiv = styled.div`
         }
     }
 `;
+
+// export const Icon = styled.img`
+//     width: 3vw;
+// `;

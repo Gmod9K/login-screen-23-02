@@ -8,7 +8,7 @@ export const Background = styled.div`
     align-items: center;
     justify-content: center;
 
-    background-color: cyan;
+    background-color: skyblue;
 
     & > img {
         width: 100vw;
@@ -42,6 +42,7 @@ export const Image = styled.div`
     height: 100%;
 
     display: flex;
+    align-items: center;
     justify-content: center;
 
     border-top-left-radius: 28px;
@@ -50,7 +51,6 @@ export const Image = styled.div`
     background-color: #00b5ff;
 
     & > img {
-        height: 95%;
         width: 95%;
     }
 `;
@@ -73,40 +73,16 @@ export const Form = styled.form`
 
 export const Title = styled.h1`
     text-align: center;
-    font-weight: 500;
+    text-transform: uppercase;
 
     font-size: 36px;
+    font-weight: 500;
 
     padding-bottom: 6px;
 `;
 
-export const LoginMisc = styled.div`
-    display: flex;
-    justify-content: space-between;
-        
-    padding-top: 6px;
-
-    & > div {
-        display: flex;
-
-        gap: 4px;
-    }
-
-    & > a {
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-`;
-
-export const Label = styled.label`
-    margin-bottom: 8px;
-`;
-
 export const Button = styled.button`
-    margin-top: 6px;
+    margin-top: 28px;
     padding: 6px;
     border: 0;
     border-radius: 6px;
@@ -119,44 +95,5 @@ export const Button = styled.button`
 
     &:hover {
         opacity: 0.6;
-    }
-`;
-
-export const RegisterDiv = styled.div`
-    display: flex;
-    justify-content: space-between;
-
-    padding-top: 12px;
-
-    & > a {
-        text-decoration: none;
-
-        &:hover {
-            text-decoration: underline;
-        }
-    }
-`;
-
-export const LoginWithDiv = styled.div`
-    display: flex;
-    flex-direction: column;
-
-    & > h2 {
-        padding-top: 28px;
-
-        text-align: center;
-    }
-
-    & > div {
-        display: flex;
-        justify-content: space-evenly;
-
-        & > a > img {
-            display: flex;
-
-            padding-top: 40px;
-
-            width: 6vw;
-        }
     }
 `;

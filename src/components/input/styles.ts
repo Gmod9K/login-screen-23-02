@@ -20,7 +20,7 @@ export const Input = styled.input<InputProps>`
     border-radius: 6px;
 
     ${(props) => props.isError && css`
-        outline: 2px solid red;
+        border: 2px solid red;
     `}
 
     &:hover {
